@@ -7,7 +7,7 @@
 body {
      background: #051012;
      color: white;
-     font-family: cursive;
+     font-family: system-ui;
      display: flex;
      align-items: center;
      flex-direction: column;
