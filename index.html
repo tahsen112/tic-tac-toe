@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>tic tac toe</title>
+
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <div class="wins">
+          <p class="xWins">X: 0</p>
+          -
+          <p class="oWins">O: 0</p>
+     </div>
+     <div class="container">
+          <div onclick="getSquar('00')">
+               <h4 id="cell00"></h4>
+          </div>
+          <div onclick="getSquar('01')">
+               <h4 id="cell01"></h4>
+          </div>
+          <div onclick="getSquar('02')">
+               <h4 id="cell02"></h4>
+          </div>
+          <div onclick="getSquar('10')">
+               <h4 id="cell10"></h4>
+          </div>
+          <div onclick="getSquar('11')">
+               <h4 id="cell11"></h4>
+          </div>
+          <div onclick="getSquar('12')">
+               <h4 id="cell12"></h4>
+          </div>
+          <div onclick="getSquar('20')">
+               <h4 id="cell20"></h4>
+          </div>
+          <div onclick="getSquar('21')">
+               <h4 id="cell21"></h4>
+          </div>
+          <div onclick="getSquar('22')">
+               <h4 id="cell22"></h4>
+          </div>
+     </div>
+
+     <div class="endScreen">
+          <h2 class="winer"> X win</h2>
+          <button onclick="playAgin()">play agin</button>
+     </div>
+
+     <script src="minimax.js"></script>
+
+</body>
+
+</html>

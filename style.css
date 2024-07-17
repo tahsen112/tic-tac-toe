@@ -1,0 +1,108 @@
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+}
+
+body {
+     background: #051012;
+     color: white;
+     font-family: cursive;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     height: 90dvh;
+     justify-content: center;
+}
+
+.wins {
+     margin: 1.5em 0 0 0;
+     font-size: 1.5em;
+}
+
+p {
+     display: inline-block;
+     margin: 0 25px;
+}
+
+.container {
+     background-color: #00222f;
+     display: grid;
+     grid-template-columns: repeat(3, 0fr);
+     gap: 15px;
+     padding: 10px;
+     margin: 2em 0 0 0;
+     width: fit-content;
+     border-radius: 10px;
+}
+
+.container div {
+     width: 100px;
+     height: 100px;
+     background-color: #00a6cd;
+     border-radius: 10px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+
+h4 {
+     text-transform: uppercase;
+     font-size: 3em;
+}
+
+.endScreen {
+     position: absolute;
+     inset: 0;
+     margin: auto;
+     background: #473737;
+     border: 2px solid #c6c6c6;
+     padding: 1em;
+     width: 15em;
+     text-align: center;
+     height: 16em;
+     display: none;
+     flex-direction: column;
+     justify-content: space-evenly;
+     border-radius: 5px;
+     font-family: system-ui;
+     align-items: center;
+}
+
+.winer {
+     text-transform: capitalize;
+}
+
+button {
+     width: 70%;
+     border: none;
+     padding: 1em;
+     font-size: 1em;
+     font-weight: 700;
+     cursor: pointer;
+     box-shadow: inset 0px 0px 25px black;
+     transition: 0.3s;
+     border-radius: 10px;
+}
+
+button:hover {
+     box-shadow: inset 0px 0px 15px black;
+     border-radius: 14px;
+}
+
+@media (max-width: 415px) {
+     .endScreen {
+          position: absolute;
+     }
+
+     .container div {
+          width: 90px;
+          height: 90px;
+     }
+
+     .container {
+          margin: 10% auto;
+     }
+}
