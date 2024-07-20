@@ -57,7 +57,7 @@ function getSpots() {
 let isFirst = true;
 let isSecond = false;
 
-function minimax(player) {
+function minimax() {
      let spots = getSpots();
 
      let bestMove;
@@ -81,17 +81,19 @@ function minimax(player) {
                          else if (cell.innerText && isFirst) {
                               bestMove = { x: 0, y: 2, xScore: 0, oScore: 0 };
                               isFirst = false;
-                              isSecond = true;
                               break
                          }
                     }
                     if (isSecond) {
+                         let cell = document.getElementById(`cell02`);
                          let cellA = document.getElementById(`cell01`);
                          let cellB = document.getElementById(`cell10`);
                          if (cellA.innerText === huPlayer && cellB.innerText === huPlayer) {
-                              bestMove = { x: 0, y: 2, xScore: 0, oScore: 0 };
-                              isSecond = false;
-                              break
+                              if (!cell.innerText) {
+                                   bestMove = { x: 0, y: 2, xScore: 0, oScore: 0 };
+                                   isSecond = false;
+                                   break
+                              }
                          }
                     }
                }
@@ -137,7 +139,7 @@ function checkWinner(player) {
 
 function makeBestMove() {
      if (!isWin) {
-          let bestMove = minimax(aiPlayer);
+          let bestMove = minimax();
           if (bestMove) {
                let cell = document.getElementById(`cell${String(bestMove.x) + String(bestMove.y)}`)
                setTimeout(() => { cell.innerText = aiPlayer; getSpots(); checkWin() }, 300)
