@@ -55,6 +55,7 @@ function getSpots() {
 
 
 let isFirst = true;
+let isSecond = false;
 
 function minimax(player) {
      let spots = getSpots();
@@ -74,11 +75,22 @@ function minimax(player) {
                          if (!cell.innerText) {
                               bestMove = { x: 1, y: 1, xScore: 0, oScore: 0 };
                               isFirst = false;
+                              isSecond = true;
                               break
                          }
                          else if (cell.innerText && isFirst) {
                               bestMove = { x: 0, y: 2, xScore: 0, oScore: 0 };
                               isFirst = false;
+                              isSecond = true;
+                              break
+                         }
+                    }
+                    if (isSecond) {
+                         let cellA = document.getElementById(`cell01`);
+                         let cellB = document.getElementById(`cell10`);
+                         if (cellA.innerText === huPlayer && cellB.innerText === huPlayer) {
+                              bestMove = { x: 0, y: 2, xScore: 0, oScore: 0 };
+                              isSecond = false;
                               break
                          }
                     }
